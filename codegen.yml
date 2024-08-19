@@ -1,0 +1,11 @@
+overrideExisting: true
+schema: 'https://api.goldsky.com/api/public/project_clyo4jmeu2els011zf5ie10t7/subgraphs/kakarot-subgraph/1.1.0/gn'
+documents: 'src/**/!(*.d).{ts,tsx}'
+generates:
+  ./src/state/data/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-rtk-query:
+          importBaseApiFrom: './slice'
+          exportHooks: true
